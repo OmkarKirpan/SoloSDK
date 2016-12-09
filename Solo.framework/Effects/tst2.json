@@ -1,0 +1,41 @@
+{
+  "solo_schema":{
+                  "version" : "0.0.1",
+                  "date" : "25/08/2016"
+                },
+
+"effect_info":{
+                "name" : "TST-2",
+                "version" : "1.0"
+              },
+
+"filters":[
+          {
+            "outputName": "Filter1",
+            "type": "GPUImageSketchFilter",
+            "input": ["SoloMovie"],
+          },
+
+          {
+            "outputName": "Filter2",
+            "type": "SoloVxFilter",
+            "input": ["SoloMovie"],
+            "params":
+            {
+              "pex_file": "Angel.pex",
+              "enable_center_of_gravity": false,
+            }
+          },
+
+          {
+            "outputName": "Filter3",
+            "type": "SoloFilter",
+            "input": ["SoloMovie", "SoloMovieMask", "Filter1", "Filter2"],
+          },
+
+          {
+            "outputName": "SoloResult",
+            "type": "GPUImageSepiaFilter",
+            "input": ["Filter3"],
+          }
+]}

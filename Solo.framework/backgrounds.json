@@ -1,0 +1,39 @@
+[
+ 
+ {
+ "title"     :   "AQUA",
+ "icon"      :   "bg_icon_aqua",
+ "movie"     :   "bg_movie_aqua",
+ },
+ 
+ {
+ "title"     :   "FIRE",
+ "icon"      :   "bg_icon_fire",
+ "movie"     :   "bg_movie_fire",
+ },
+ 
+ {
+ "title"     :   "WAVE",
+ "icon"      :   "bg_icon_wave",
+ "movie"     :   "bg_movie_wave",
+ },
+ 
+ {
+ "title"     :   "TROPIC",
+ "icon"      :   "bg_icon_tropic",
+ "movie"     :   "bg_movie_tropic",
+ },
+ 
+ {
+ "title"     :   "MNTN",
+ "icon"      :   "bg_icon_mountain_top",
+ "movie"     :   "bg_movie_mountain_top",
+ },
+ 
+ {
+ "title"     :   "BEAMS",
+ "icon"      :   "bg_icon_beams",
+ "movie"     :   "bg_movie_beams",
+ },
+ 
+ ]

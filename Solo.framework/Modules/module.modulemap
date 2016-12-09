@@ -1,0 +1,6 @@
+framework module Solo {
+  umbrella header "Solo.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,40 @@
+{
+  "solo_schema":{
+                  "version" : "0.0.1",
+                  "date" : "25/08/2016"
+                },
+
+"effect_info":{
+                "name" : "XTRM",
+                "version" : "1.0"
+              },
+
+"filters":[
+          {
+            "outputName": "Filter1",
+            "type": "GPUImageSobelEdgeDetectionFilter",
+            "input": ["SoloMovie"],
+            "params":{
+                        "value": 1.0,
+                        "min": 0.0,
+                        "max": 1.0
+                      }
+          },
+
+          {
+            "outputName": "Filter2",
+            "type": "GPUImagePixellateFilter",
+            "input": ["SoloMovie"],
+            "params":{
+                        "value": 0.15,
+                        "min": 0.0,
+                        "max": 0.3
+                      }
+          },
+
+          {
+            "outputName": "SoloResult",
+            "type": "SoloFilter",
+            "input": ["SoloMovie","SoloMovieMask","Filter1","Filter2"],
+          },
+]}

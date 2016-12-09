@@ -1,0 +1,36 @@
+{
+  "solo_schema":{
+                  "version" : "0.0.1",
+                  "date" : "25/08/2016"
+                },
+
+"effect_info":{
+                "name" : "DUKE",
+                "version" : "1.0"
+              },
+
+"filters":[
+          {
+            "outputName": "Filter1",
+            "type": "GPUImageGrayScaleFilter",
+            "input": ["SoloMovie"],
+            "params":{}
+          },
+
+          {
+            "outputName": "Filter2",
+            "type": "GPUImageSmoothToonFilter",
+            "input": ["SoloMovie"],
+            "params":{
+                        "value": 2.25,
+                        "min": 1.0,
+                        "max": 6.0
+                      }
+          },
+
+          {
+            "outputName": "SoloResult",
+            "type": "SoloFilter",
+            "input": ["SoloMovie","SoloMovieMask","Filter1","Filter2"],
+          },
+]}

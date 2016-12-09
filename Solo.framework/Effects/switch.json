@@ -1,0 +1,36 @@
+{
+  "solo_schema":{
+                  "version" : "0.0.1",
+                  "date" : "25/08/2016"
+                },
+
+"effect_info":{
+                "name" : "SWITCH",
+                "version" : "1.0"
+              },
+
+"filters":[
+          {
+            "outputName": "Filter1",
+            "type": "GPUImageColorInvertFilter",
+            "input": ["SoloMovie"],
+            "params":{}
+          },
+
+          {
+            "outputName": "Filter2",
+            "type": "GPUImageContrastFilter",
+            "input": ["SoloMovie"],
+            "params":{
+                        "value": 4.0,
+                        "min": 0.0,
+                        "max": 4.0
+                      }
+          },
+
+          {
+            "outputName": "SoloResult",
+            "type": "SoloFilter",
+            "input": ["SoloMovie","SoloMovieMask","Filter1","Filter2"],
+          },
+]}
