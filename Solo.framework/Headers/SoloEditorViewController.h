@@ -87,7 +87,7 @@
 /*!
     @brief URL to media being edited
  */
-@property (nonatomic, copy) NSURL *mediaURL;
+@property (nonatomic, copy, readonly) NSURL *mediaURL;
 
 
 /*!
