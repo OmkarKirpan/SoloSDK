@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SoloSDK'
   s.version         = '0.0.1'
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, ‘8.1’
   s.homepage         = 'http://www.tipit.tv'
   s.authors         = { 'tipitltd' => 'accounts@tipit.tv' }
   s.license         =  { :type => 'MIT' }
