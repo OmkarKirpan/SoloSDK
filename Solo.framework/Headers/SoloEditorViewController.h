@@ -11,6 +11,9 @@
 @protocol SoloEditorViewControllerDelegate;
 @class GPUImageView;
 
+
+typedef void(^ExportCompletion)(NSURL *url);
+
 /*!
     @class SoloEditorViewController
  
@@ -85,6 +88,14 @@
 
 
 /*!
+ @brief Tutorial tooltip popups visibility token
+ 
+ @discussion Use it to get or set tutorial tooltip popups hidden state. Assign YES to hide tutorial tooltip popups on default editor
+ */
+@property (nonatomic, assign) BOOL tutorialTooltipsIsHidden;
+
+
+/*!
     @brief URL to media being edited
  */
 @property (nonatomic, copy, readonly) NSURL *mediaURL;
@@ -121,6 +132,17 @@
     @discussion Call to simulate done button press. In this case the result will be saved and returned in callback
  */
 - (void)done;
+
+
+/*!
+ @brief Call to generate url with processed photo
+ 
+ @discussion When calling this method it saves image with applied filters on it and returns image url in completion
+ 
+ @param completion Code block that is called when image is saved
+ */
+- (void)exportProcessedPhoto:(ExportCompletion)completion;
+
 
 
 @end

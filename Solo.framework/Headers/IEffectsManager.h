@@ -21,6 +21,10 @@
  */
 @property (nonatomic, readonly) NSUInteger effectsCount;
 
+/*!
+ @brief Returns current IEffect
+ */
+@property (nonatomic, readonly) id<IEffect> currentEffect;
 
 /*!
     @discussion Call it to get reference to an effect with corresponding index

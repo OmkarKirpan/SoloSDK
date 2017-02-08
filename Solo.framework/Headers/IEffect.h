@@ -20,6 +20,36 @@
  */
 @property (nonatomic, readonly) NSString *name;
 
+/*!
+ @brief Predefined minimum value of effect's background
+ */
+@property (nonatomic, readonly)  CGFloat backgroundParamMinValue;
+
+/*!
+ @brief Predefined maximum value of effect's background
+ */
+@property (nonatomic, readonly)  CGFloat backgroundParamMaxValue;
+
+/*!
+ @brief  Value of effect's background. Possible values - in range from backgroundParamMinValue to backgroundParamMaxValue
+ */
+@property (nonatomic, assign)    CGFloat backgroundParamValue;
+
+/*!
+ @brief Predefined minimum value of effect's foreground
+ */
+@property (nonatomic, readonly)  CGFloat objectParamMinValue;
+
+/*!
+ @brief Predefined maximum value of effect's foreground
+ */
+@property (nonatomic, readonly)  CGFloat objectParamMaxValue;
+
+/*!
+ @brief  Value of effect's foreground. Possible values - in range from objectParamMinValue to objectParamMaxValue
+ */
+@property (nonatomic, assign)    CGFloat objectParamValue;
+
 
 /*!
     @brief Predefined icon image
