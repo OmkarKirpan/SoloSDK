@@ -11,6 +11,12 @@
 @protocol SoloEditorViewControllerDelegate;
 @class GPUImageView;
 
+typedef NS_ENUM(NSUInteger, ShowStyle)
+{
+    SS_Modal = 0,
+    SS_Push
+};
+
 
 typedef void(^ExportCompletion)(NSURL *url);
 
@@ -108,6 +114,13 @@ typedef void(^ExportCompletion)(NSURL *url);
  */
 @property (nonatomic, readonly) UIImage *firstImageThumbnail;
 
+/*!
+ @brief Presentation sty;e
+ 
+ @discussion Presentation style value defines how view controller is presented on editing. Default value is SS_Modal
+ */
+@property (nonatomic, assign) ShowStyle showStyle;
+
 
 /*!
     @brief Default editor static constructor
@@ -175,6 +188,6 @@ typedef void(^ExportCompletion)(NSURL *url);
     @param sender Reference to the editor view controller that called it
     @param url URL to the result media
  */
-- (void)onSoloEditorViewController:sender didFinishExport:url;
+- (void)onSoloEditorViewController:(SoloEditorViewController*)sender didFinishExport:(NSURL*)url;
 
 @end
