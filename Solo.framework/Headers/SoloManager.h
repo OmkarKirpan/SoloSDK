@@ -310,4 +310,18 @@ typedef void(^ImageBlock)(UIImage *image);
  */
 + (void)setTargetSize:(CGSize)size;
 
+/*!
+    @brief Set progress popup text
+ 
+    @discussion Call to set progress popup text to a different value rather than using default. Default is "Processing"
+ */
++ (void)setProgressPopupText:(NSString*)text;
+
+/*!
+    @brief Set show progress popu
+ 
+    @discussion Call to disable/enable displaying progress popup while performing processin operation on background thread. Default is YES
+ */
++ (void)setShowProgressPopup:(BOOL)show;
+
 @end
