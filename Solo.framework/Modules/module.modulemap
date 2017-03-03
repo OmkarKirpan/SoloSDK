@@ -4,3 +4,7 @@ framework module Solo {
   export *
   module * { export * }
 }
+
+module Solo.Swift {
+    header "Solo-Swift.h"
+}

@@ -15,6 +15,7 @@ extern const NSInteger kCancelError;
 
 @protocol IEffectsManager;
 @protocol IEffect;
+@protocol IEffectBundle;
 @protocol IBGManager;
 @protocol IBGVideo;
 @class SoloEditorViewController;
@@ -208,96 +209,96 @@ typedef void(^ImageBlock)(UIImage *image);
 
 
 /*!
- @brief Activate custom background
+    @brief Activate custom background
  
- @discussion Call to load and activate any custom photo background in editor.
- @param url URL to the photo background file to activate in current editor
+    @discussion Call to load and activate any custom photo background in editor.
+    @param url URL to the photo background file to activate in current editor
  */
 + (void)setBGImageURL:(NSURL*)url;
 
 /*!
- @brief Call to generate photo mask
+    @brief Call to generate photo mask
  
- @discussion When calling this method it will start communication with server to upload image and receive generated image mask in a response
+    @discussion When calling this method it will start communication with server to upload image and receive generated image mask in a response
  
- @param image Image to upload to server
- @param completion Code block that will be called when image mask is received from server
+    @param image Image to upload to server
+    @param completion Code block that will be called when image mask is received from server
  */
 + (void)generateImageMask:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
- @brief Call to get last generated image mask
- 
- @discussion This method returns mask that was generated with generateImageMask:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
- By default SDK uses device screen size as a target size, this means that it resizes input image to it or to the most close size proportionally before processing. Use setTargetSize: if you need target of a specific size.
+    @brief Call to get last generated image mask
+     
+    @discussion This method returns mask that was generated with generateImageMask:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
+    By default SDK uses device screen size as a target size, this means that it resizes input image to it or to the most close size proportionally before processing. Use setTargetSize: if you need target of a specific size.
  */
 + (UIImage*)getLastImageMask;
 
 /*!
- @brief Call to generate photo mask of the head only
+    @brief Call to generate photo mask of the head only
  
- @discussion When calling this method it will start communication with server to upload image and receive generated image of the head in a response
+    @discussion When calling this method it will start communication with server to upload image and receive generated image of the head in a response
  
- @param image Image to upload to server
- @param completion Code block that will be called when image mask is received from server
+    @param image Image to upload to server
+    @param completion Code block that will be called when image mask is received from server
  */
 + (void)generateImageHeadImage:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
- @brief Call to generate photo mask of the head only
+    @brief Call to generate photo mask of the head only
  
- @discussion When calling this method it will start communication with server to upload image and receive generated image mask of the head in a response
+    @discussion When calling this method it will start communication with server to upload image and receive generated image mask of the head in a response
  
- @param image Image to upload to server
- @param completion Code block that will be called when image mask is received from server
+    @param image Image to upload to server
+    @param completion Code block that will be called when image mask is received from server
  */
 + (void)generateImageHeadMask:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
- @brief Call to generate photo mask of the head only
+    @brief Call to generate photo mask of the head only
  
- @discussion When calling this method it will start communication with server to upload image and receive generated cropped image of the head in a response
+    @discussion When calling this method it will start communication with server to upload image and receive generated cropped image of the head in a response
  
- @param image Image to upload to server
- @param completion Code block that will be called when image mask is received from server
+    @param image Image to upload to server
+    @param completion Code block that will be called when image mask is received from server
  */
 + (void)generateImageHeadImageCropped:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
- @brief Call to generate photo mask of the head only
+    @brief Call to generate photo mask of the head only
  
- @discussion When calling this method it will start communication with server to upload image and receive generated cropped image mask of the head in a response
+    @discussion When calling this method it will start communication with server to upload image and receive generated cropped image mask of the head in a response
  
- @param image Image to upload to server
- @param completion Code block that will be called when image mask is received from server
+    @param image Image to upload to server
+    @param completion Code block that will be called when image mask is received from server
  */
 + (void)generateImageHeadMaskCropped:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
- @brief Call to get last generated image mask of the head only
+    @brief Call to get last generated image mask of the head only
  
- @discussion This method returns image that was generated with generateImageHeadImage:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
+    @discussion This method returns image that was generated with generateImageHeadImage:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
 + (UIImage*)getLastImageHeadImage;
 
 /*!
- @brief Call to get last generated image mask of the head only
+    @brief Call to get last generated image mask of the head only
  
- @discussion This method returns mask that was generated with generateImageHeadMask:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
+    @discussion This method returns mask that was generated with generateImageHeadMask:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
 + (UIImage*)getLastImageHeadMask;
 
 /*!
- @brief Call to get last generated image mask of the head only
+    @brief Call to get last generated image mask of the head only
  
- @discussion This method returns image that was generated with generateImageHeadImageCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
+    @discussion This method returns image that was generated with generateImageHeadImageCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
 + (UIImage*)getLastImageHeadImageCropped;
 
 /*!
- @brief Call to get last generated image mask of the head only
+    @brief Call to get last generated image mask of the head only
  
- @discussion This method returns mask that was generated with generateImageHeadMaskCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
+    @discussion This method returns mask that was generated with generateImageHeadMaskCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
 + (UIImage*)getLastImageHeadMaskCropped;
 
@@ -323,5 +324,34 @@ typedef void(^ImageBlock)(UIImage *image);
     @discussion Call to disable/enable displaying progress popup while performing processin operation on background thread. Default is YES
  */
 + (void)setShowProgressPopup:(BOOL)show;
+
+/*!
+    @brief Create bundle
+ 
+    @discussion Call to create new effect bundle instance
+ 
+    @param url Either local or remote file URL
+ */
++ (id<IEffectBundle>)effectBundleWithURL:(NSURL*)url;
+
+/*!
+    @brief Create effect
+ 
+    @discussion Call to create new effect bundle instance
+ 
+    @param effectBundle Effect bundle
+    @param error Error to return as a result if failed
+ */
++ (id<IEffect>)effectFromBundle:(id<IEffectBundle>)effectBundle error:(NSError**)error;
+
+/*!
+    @brief Create background video
+ 
+    @discussion Call to create background video instance
+ 
+    @param movieURL URL to background movie file
+    @param iconURL URL to background icon file
+ */
++ (id<IBGVideo>)bgVideoWithMovieURL:(NSURL*)movieURL iconURL:(NSURL*)iconURL;
 
 @end

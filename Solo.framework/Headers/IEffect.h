@@ -6,7 +6,16 @@
 //  Copyright © 2016 Tipit Ltd. All rights reserved.
 //
 
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+typedef UIImage ImageType;
+#else
+typedef NSImage ImageType;
+#endif
+
+
+@protocol IFilterParameter;
+@protocol IEffectBundle;
 
 
 /*!
@@ -19,6 +28,11 @@
     @brief Predefined effect name
  */
 @property (nonatomic, readonly) NSString *name;
+
+/*!
+    @brief Effect version
+ */
+@property (nonatomic, readonly) NSString *version;
 
 /*!
  @brief Predefined minimum value of effect's background
@@ -59,6 +73,6 @@
  
     @return Icon image if it's predefined, otherwise returns nil
  */
-- (UIImage*)getIconImage;
+- (ImageType*)getIconImage;
 
 @end

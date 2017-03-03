@@ -17,7 +17,7 @@
 /*!
     @brief Predefined background title
  */
-@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
 
 /*!

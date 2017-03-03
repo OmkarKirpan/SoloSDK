@@ -7,6 +7,7 @@
 //
 
 @protocol IEffect;
+@protocol IEffectBundle;
 
 
 /*!
@@ -21,10 +22,12 @@
  */
 @property (nonatomic, readonly) NSUInteger effectsCount;
 
+
 /*!
- @brief Returns current IEffect
+    @brief Returns current IEffect
  */
 @property (nonatomic, readonly) id<IEffect> currentEffect;
+
 
 /*!
     @discussion Call it to get reference to an effect with corresponding index
@@ -34,6 +37,14 @@
     @return Reference to an effect
  */
 - (id<IEffect>)effectAtIndex:(NSUInteger)index;
+
+
+/*!
+    @brief Add effect
+ 
+    @discussion Call it to register effect in the effects manager list and make it available in editor
+ */
+- (void)addEffect:(id<IEffect>)effect;
 
 
 @end

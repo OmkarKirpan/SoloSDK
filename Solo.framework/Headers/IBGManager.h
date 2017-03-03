@@ -31,4 +31,18 @@
  */
 - (id<IBGVideo>)backgroundAtIndex:(NSUInteger)index;
 
+/*!
+    @brief Add video background
+ 
+    @discussion Call to add video background into the list and make it available in editor
+ */
+- (void)addVideoBG:(id<IBGVideo>)bgVideo;
+
+/*!
+ @brief Add photo background
+ 
+ @discussion Call to add photo background into the list and make it available in editor
+ */
+- (void)addPhotoBG:(id<IBGVideo>)bgVideo;
+
 @end
