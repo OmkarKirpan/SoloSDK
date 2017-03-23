@@ -16,6 +16,7 @@ typedef NSImage ImageType;
 
 @protocol IFilterParameter;
 @protocol IEffectBundle;
+@protocol IFilter;
 
 
 /*!
@@ -64,7 +65,6 @@ typedef NSImage ImageType;
  */
 @property (nonatomic, assign)    CGFloat objectParamValue;
 
-
 /*!
     @brief Predefined icon image
     
@@ -74,5 +74,24 @@ typedef NSImage ImageType;
     @return Icon image if it's predefined, otherwise returns nil
  */
 - (ImageType*)getIconImage;
+
+/*!
+    @brief Apply custom filter to foreground
+ 
+    @discussion Call this method to apply custom filter to the foreground
+ 
+    @param filter Custom filter to apply
+ */
+- (void)applyCustomObjectFilter:(id<IFilter>)filter;
+
+/*!
+    @brief Apply custom filter to background
+ 
+    @discussion Call this method to apply custom filter to the background
+ 
+    @param filter Custom filter to apply
+ */
+- (void)applyCustomBackgroundFilter:(id<IFilter>)filter;
+
 
 @end

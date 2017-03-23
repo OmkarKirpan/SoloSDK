@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import "IFilter.h"
 
 extern const NSInteger kInvalidAssetURLError;
 extern const NSInteger kPrepareAssetError;
@@ -343,6 +344,33 @@ typedef void(^ImageBlock)(UIImage *image);
     @param error Error to return as a result if failed
  */
 + (id<IEffect>)effectFromBundle:(id<IEffectBundle>)effectBundle error:(NSError**)error;
+
+/*!
+    @brief Create filter
+ 
+    @discussion Call to create custom filter instance by it's name
+ 
+    @param type Type of custom filter
+ */
++ (id<IFilter>)customfilterWithType:(CustomFilterType)type;
+
+/*!
+    @brief Apply custom filter to foreground
+ 
+    @discussion Call this method to apply custom filter to the foreground
+ 
+    @param filter Custom filter to apply
+ */
++ (void)applyCustomObjectFilter:(id<IFilter>)filter;
+
+/*!
+    @brief Apply custom filter to background
+ 
+    @discussion Call this method to apply custom filter to the background
+ 
+    @param filter Custom filter to apply
+ */
++ (void)applyCustomBackgroundFilter:(id<IFilter>)filter;
 
 /*!
     @brief Create background video

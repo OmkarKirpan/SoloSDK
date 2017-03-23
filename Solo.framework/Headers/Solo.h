@@ -14,5 +14,6 @@
 #import "IEffectsManager.h"
 #import "IEffect.h"
 #import "IEffectBundle.h"
+#import "IFilter.h"
 #import "IBGManager.h"
 #import "IBGVideo.h"
