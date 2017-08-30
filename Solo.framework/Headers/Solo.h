@@ -10,6 +10,7 @@
 
 #import "SoloManager.h"
 #import "SoloEditorViewController.h"
+#import "FTPManager.h"
 
 #import "IEffectsManager.h"
 #import "IEffect.h"

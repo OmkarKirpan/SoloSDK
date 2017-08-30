@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "IFilter.h"
+#import "ISTypes.h"
 
 extern const NSInteger kInvalidAssetURLError;
 extern const NSInteger kPrepareAssetError;
@@ -21,6 +22,7 @@ extern const NSInteger kCancelError;
 @protocol IBGVideo;
 @class SoloEditorViewController;
 
+typedef void(^CompletionBlock)();
 typedef void(^EditCompletion)(NSURL *url, NSError *error);
 typedef void(^EditorBlock)(SoloEditorViewController *editor);
 typedef void(^ImageMaskBlock)(UIImage *imageMask, NSError *error);
@@ -115,6 +117,15 @@ typedef void(^ImageBlock)(UIImage *image);
 
 
 /*!
+    @brief Call to start editor in live camera mode
+    
+    @param willAppearBlock Code block that is called when editor instance is created and about to appear on screen. It's good place to make some configurations to the editor view controller like configure default controls visibility (Cancel, Done, Music buttons etc.)
+    @param completion Code block that is called when saving result photo is finished or when user cancels the progress
+    @param parent Parent view controller on top of which editor will be presented
+ */
++ (void)editLive:(EditorBlock)willAppearBlock completion:(EditCompletion)completion parent:(UIViewController*)parent;
+
+/*!
     @brief Apply effect to video without presenting editor
  
     @discussion Call to apply effect to a video on background. TargetSize property does not have effect in this case. The output video has the same resolution as input.
@@ -137,6 +148,17 @@ typedef void(^ImageBlock)(UIImage *image);
  */
 + (void)applyEffectToPhoto:(NSURL*)assetURL effect:(id<IEffect>)effect completion:(EditCompletion)completion;
 
+/*!
+    @brief Apply effect to photo without presenting editor
+ 
+    @discussion Call to apply effect to a photo on background. TargetSize property does not have effect in this case. The output photo has the same resolution as input.
+ 
+    @param photo a photo file to edit
+    @param effect Effect to apply to the photo
+    @param completion Code block that is called when saving result photo is finished
+ */
++ (void)applyEffectToPhotoV2:(UIImage*)photo effect:(id<IEffect>)effect completion:(EditCompletion)completion;
+
 
 /*!
     @brief Force to finish editing media
@@ -146,6 +168,16 @@ typedef void(^ImageBlock)(UIImage *image);
     @param cancel Pass YES if canceling is needed
  */
 + (void)finishEditing:(BOOL)cancel;
+
+/*!
+    @brief Force to finish editing media
+ 
+    @discussion Call to finish editing process. This method triggers delegate appropriate method to notify about the result
+ 
+    @param cancel Pass YES if canceling is needed
+    @param completion Code block that is called in the end of all operations when editing is completely finished 
+ */
++ (void)finishEditing:(BOOL)cancel completion:(CompletionBlock)completion;
 
 
 /*!
@@ -177,6 +209,13 @@ typedef void(^ImageBlock)(UIImage *image);
     @param effect Effect to make active in the current editor
  */
 + (void)setCurrentEffect:(id<IEffect>)effect;
+
+/*!
+    @brief Reset effects
+ 
+    @discuss Call to completely reset effects list
+ */
++ (void)resetEffects;
 
 
 /*!
@@ -228,12 +267,94 @@ typedef void(^ImageBlock)(UIImage *image);
 + (void)generateImageMask:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
-    @brief Call to get last generated image mask
-     
-    @discussion This method returns mask that was generated with generateImageMask:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
-    By default SDK uses device screen size as a target size, this means that it resizes input image to it or to the most close size proportionally before processing. Use setTargetSize: if you need target of a specific size.
+    @brief Call to generate photo mask
+ 
+    @discussion When calling this method does not upload photo to server, but uses Neural Network to generate mask on device
+ 
+    @param image Image to use for generating mask from
+    @param completion Code block that will be called when image mask is geenrated
  */
-+ (UIImage*)getLastImageMask;
++ (void)generateImageMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
+
+/*! */
++ (void)runHeadCutterV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("Will be removed in next versions. Use runHeadCutterMaskV2 instead");
+
+/*!
+    @brief Call to generate head mask image
+    
+    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
+ 
+    @param image Source image to extract mask from
+    @param completion Code block that will be called when task is complete
+ */
++ (void)runHeadCutterMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
+
+/*!
+    @brief Call to generate cropped head image
+ 
+    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
+ 
+    @param image Source image to extract head from
+    @param completion Code block that will be called when task is complete
+ */
++ (void)runHeadCutterImageV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
+
+/*!
+    @brief Call to generate face mask image
+ 
+    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
+ 
+    @param image Source image to extract face mask from
+    @param completion Code block that will be called when task is complete
+ */
++ (void)runFaceCutterMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
+
+/*!
+    @brief Call to generate cropped face image
+ 
+    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
+ 
+    @param image Source image to extract face from
+    @param completion Code block that will be called when task is complete
+ */
++ (void)runFaceCutterImageV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
+
+/*!
+    @brief Call to generate hair mask image
+ 
+    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
+ 
+    @param image Source image to extract hair mask from
+    @param completion Code block that will be called when task is complete
+ */
++ (void)runHairCutterMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
+
+/*!
+    @brief Call to generate hair image
+ 
+    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
+ 
+    @param image Source image to extract hair from
+    @param completion Code block that will be called when task is complete
+ */
++ (void)runHairCutterImageV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
+
+/*!
+    @brief Call to get on device generated mask for the selfie photo
+ 
+    @discussion This method does not send any request to server and generates photo mask on device
+ */
+
++ (void)selfieMask:(UIImage*)image completion:(ImageMaskBlock)completion;
+
+/*!
+ @brief gets cropped and aligned image to passed through the neural net
+ 
+ @discussion this method returns aligned and cropped image to passed through neural net for hair and face segmentation
+ By default SDK uses device screen size as a target size, this means that it resizes input image to it or to the most close size proportionally before processing. Use setTargetSize: if you need target of a specific size.
+ */
+
++ (UIImage*)getLastImageMask DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to generate photo mask of the head only
@@ -243,7 +364,7 @@ typedef void(^ImageBlock)(UIImage *image);
     @param image Image to upload to server
     @param completion Code block that will be called when image mask is received from server
  */
-+ (void)generateImageHeadImage:(UIImage*)image completion:(ImageMaskBlock)completion;
++ (void)generateImageHeadImage:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to generate photo mask of the head only
@@ -253,7 +374,7 @@ typedef void(^ImageBlock)(UIImage *image);
     @param image Image to upload to server
     @param completion Code block that will be called when image mask is received from server
  */
-+ (void)generateImageHeadMask:(UIImage*)image completion:(ImageMaskBlock)completion;
++ (void)generateImageHeadMask:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to generate photo mask of the head only
@@ -263,7 +384,7 @@ typedef void(^ImageBlock)(UIImage *image);
     @param image Image to upload to server
     @param completion Code block that will be called when image mask is received from server
  */
-+ (void)generateImageHeadImageCropped:(UIImage*)image completion:(ImageMaskBlock)completion;
++ (void)generateImageHeadImageCropped:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to generate photo mask of the head only
@@ -273,35 +394,35 @@ typedef void(^ImageBlock)(UIImage *image);
     @param image Image to upload to server
     @param completion Code block that will be called when image mask is received from server
  */
-+ (void)generateImageHeadMaskCropped:(UIImage*)image completion:(ImageMaskBlock)completion;
++ (void)generateImageHeadMaskCropped:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to get last generated image mask of the head only
  
     @discussion This method returns image that was generated with generateImageHeadImage:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
-+ (UIImage*)getLastImageHeadImage;
++ (UIImage*)getLastImageHeadImage DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to get last generated image mask of the head only
  
     @discussion This method returns mask that was generated with generateImageHeadMask:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
-+ (UIImage*)getLastImageHeadMask;
++ (UIImage*)getLastImageHeadMask DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to get last generated image mask of the head only
  
     @discussion This method returns image that was generated with generateImageHeadImageCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
-+ (UIImage*)getLastImageHeadImageCropped;
++ (UIImage*)getLastImageHeadImageCropped DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to get last generated image mask of the head only
  
     @discussion This method returns mask that was generated with generateImageHeadMaskCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
  */
-+ (UIImage*)getLastImageHeadMaskCropped;
++ (UIImage*)getLastImageHeadMaskCropped DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Set render target size
@@ -311,6 +432,15 @@ typedef void(^ImageBlock)(UIImage *image);
     @param size New render target size
  */
 + (void)setTargetSize:(CGSize)size;
+
+/*!
+ @brief Set Neural Network target size
+ 
+ @discussion Call to set new target size for neural network effects. By default it's equal to 500x500
+ 
+ @param size New target size
+ */
++ (void)setNNTargetSize:(CGSize)size;
 
 /*!
     @brief Set progress popup text
@@ -334,6 +464,13 @@ typedef void(^ImageBlock)(UIImage *image);
     @param url Either local or remote file URL
  */
 + (id<IEffectBundle>)effectBundleWithURL:(NSURL*)url;
+
+/*!
+ @brief Remove effect from library
+ 
+ @discuss Call to remove effect associated with URL from the internal library
+ */
++ (void)removeEffectFromLibrary:(NSURL*)effectURL;
 
 /*!
     @brief Create effect
@@ -381,5 +518,19 @@ typedef void(^ImageBlock)(UIImage *image);
     @param iconURL URL to background icon file
  */
 + (id<IBGVideo>)bgVideoWithMovieURL:(NSURL*)movieURL iconURL:(NSURL*)iconURL;
+
+/*!
+    @brief Swap camera
+ 
+    @discussion Call to swap camera between front and back when in live mode. editLive: always starts with front camera
+ */
++ (void)swapCamera;
+
+/*!
+    @brief Set solo mask mode
+ 
+    @discussiont Call to specify mask mode to use in editing session. The default is SMM_FullBody
+ */
++ (void)setSoloMaskMode:(SoloMaskMode)mode;
 
 @end

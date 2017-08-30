@@ -23,6 +23,10 @@ typedef void (^PogressBlock)(CGFloat percentage);
  */
 @property (nonatomic, readonly) BOOL isReady;
 
+/*!
+ @brief YES if want to use effect file name for effect.name
+ */
+@property (nonatomic, assign) BOOL useEffectsFileName;
 
 /*!
     @brief Call to make bundle ready for use locally

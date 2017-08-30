@@ -44,6 +44,7 @@ typedef NS_ENUM(NSUInteger, CustomFilterType)
     CFT_Stretch,
     CFT_Dilation,
     CFT_Erosion,
+    CFT_SobelEdgeDetection,
     CFT_Count,
 };
 

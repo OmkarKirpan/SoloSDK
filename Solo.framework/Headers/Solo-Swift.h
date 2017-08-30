@@ -134,17 +134,60 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
 @import Foundation;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 
+SWIFT_CLASS("_TtC4Solo5Layer")
+@interface Layer : NSObject
+@property (nonatomic, readonly) NSInteger hashValue;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@protocol MTLDevice;
+@protocol MTLCommandBuffer;
+
+SWIFT_CLASS("_TtC4Solo6Argmax")
+@interface Argmax : Layer
+- (nonnull instancetype)initWithName:(NSString * _Nullable)name features:(NSInteger)features OBJC_DESIGNATED_INITIALIZER;
+- (void)loadWithDevice:(id <MTLDevice> _Nonnull)device;
+- (void)encodeWithCommandBuffer:(id <MTLCommandBuffer> _Nonnull)commandBuffer sources:(NSArray<Layer *> * _Nonnull)sources;
+- (void)setOutputChannelsCountWithFeatures:(NSInteger)features;
+@end
+
+
+typedef SWIFT_ENUM(NSInteger, MaskMode) {
+  MaskModeHead = 0,
+  MaskModeFace = 1,
+  MaskModeHair = 2,
+  MaskModeBody = 3,
+  MaskModeFullBody = 4,
+};
+
+
+SWIFT_PROTOCOL("_TtP4Solo8NNBundle_")
+@protocol NNBundle
+- (NSString * _Nonnull)getName SWIFT_WARN_UNUSED_RESULT;
+- (NSData * _Nonnull)fileDataWithFileName:(NSString * _Nonnull)fileName SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@protocol MTLTexture;
+
 SWIFT_CLASS("_TtC4Solo8NNWraper")
 @interface NNWraper : NSObject
+- (NSString * _Nullable)networkName SWIFT_WARN_UNUSED_RESULT;
+- (id <MTLDevice> _Nullable)getMTLDevice SWIFT_WARN_UNUSED_RESULT;
 - (void)initNetworkWithName:(NSString * _Nonnull)name SWIFT_METHOD_FAMILY(none) SWIFT_DEPRECATED;
-- (void)initNetworkWithBundleURL:(NSURL * _Nonnull)bundleURL SWIFT_METHOD_FAMILY(none);
-- (BOOL)isNetworkInitialized SWIFT_WARN_UNUSED_RESULT;
+- (void)initNetworkWithBundle:(id <NNBundle> _Nonnull)bundle SWIFT_METHOD_FAMILY(none);
 - (NSArray<NSNumber *> * _Nullable)runNetworkWithData:(NSArray<NSNumber *> * _Nonnull)data width:(NSInteger)width height:(NSInteger)height SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<NSNumber *> * _Nullable)runNetworkWithData:(NSArray<NSNumber *> * _Nonnull)data width:(NSInteger)width height:(NSInteger)height input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<NSNumber *> * _Nullable)runImageSegmentationWithCgImage:(CGImageRef _Nonnull)cgImage width:(NSInteger)width height:(NSInteger)height input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<id <MTLTexture>> * _Nonnull)runTextureMasksSegmentationWithTexture:(id <MTLTexture> _Nullable)texture input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output modes:(NSArray<NSString *> * _Nonnull)modes SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<id <MTLTexture>> * _Nonnull)runTextureMasksSegmentationWithTexture:(id <MTLTexture> _Nullable)texture input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
+- (id <MTLTexture> _Nullable)runTextureHeadSegmentationWithTexture:(id <MTLTexture> _Nullable)texture input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output mode:(enum MaskMode)mode SWIFT_WARN_UNUSED_RESULT;
+- (id <MTLTexture> _Nullable)runTextureSegmentationWithTexture:(id <MTLTexture> _Nullable)texture width:(NSInteger)width height:(NSInteger)height input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output resultChannels:(NSInteger)resultChannels SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

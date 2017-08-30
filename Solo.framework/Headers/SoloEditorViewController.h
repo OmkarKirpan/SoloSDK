@@ -148,6 +148,13 @@ typedef void(^ExportCompletion)(NSURL *url);
 
 
 /*!
+    @brief Returns YES whether quit confirmation dialog should be shown
+ 
+    @discussion Override this method to control quit confirmation dialog visibility. Return NO if you don't want it to be shown
+ */
+- (BOOL)showQuitConfirmation;
+
+/*!
  @brief Call to generate url with processed photo
  
  @discussion When calling this method it saves image with applied filters on it and returns image url in completion
@@ -171,6 +178,7 @@ typedef void(^ExportCompletion)(NSURL *url);
 
 @protocol SoloEditorViewControllerDelegate <NSObject>
 
+@optional
 /*!
     @brief Did cancel notification
  
@@ -181,6 +189,15 @@ typedef void(^ExportCompletion)(NSURL *url);
 - (void)onSoloEditorViewControllerDidCancel:(SoloEditorViewController*)sender;
 
 /*!
+    @brief Did refuse cancelling
+ 
+    @discussed This method is called when user pressed cancel button of the editor and then answers NO the confirmation question
+ 
+    @param sender Reference to the editor view controller that called it
+ */
+- (void)onSoloEditorViewControllerDidRefuseCancelling:(SoloEditorViewController*)sender;
+
+/*!
     @brief Did finish notification
  
     @discussion This method is called when user presses Done button on the editor or when <i>done</i> method of editor is fired in the code and right after saving result media is finished
@@ -189,5 +206,15 @@ typedef void(^ExportCompletion)(NSURL *url);
     @param url URL to the result media
  */
 - (void)onSoloEditorViewController:(SoloEditorViewController*)sender didFinishExport:(NSURL*)url;
+
+/*!
+ @brief Did complete notification
+ 
+ @discussion This method is called when server processing is ended
+
+ @param sender Reference to the editor view controller that called it
+ @param error Returns error if something went wrong
+ */
+- (void)onSoloEditorViewController:(SoloEditorViewController*)sender didCompleteWithError:(NSError *)error;
 
 @end

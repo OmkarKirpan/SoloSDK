@@ -46,5 +46,4 @@
  */
 - (void)addEffect:(id<IEffect>)effect;
 
-
 @end
