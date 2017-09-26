@@ -6,15 +6,15 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		CFQGEJwQhBQK20+SKd+8QdduQOk=
+		1hCP5Eh6PDe6+UBCwnY0Iszqwe8=
 		</data>
 		<key>Base.lproj/Music.storyboardc/AddMusicToolViewController.nib</key>
 		<data>
-		w2tzjIYPJj/lDONZXNzlxMAsA3Y=
+		bAZ6uD2EfLdaBrajpJI35d6cRac=
 		</data>
 		<key>Base.lproj/Music.storyboardc/DownloadCompositionViewController.nib</key>
 		<data>
-		O4md5fFRELNd+k5wHOKY+oUBzUE=
+		9WAnC+SlcOqDAWQhckzwQ3PHIo0=
 		</data>
 		<key>Base.lproj/Music.storyboardc/Info.plist</key>
 		<data>
@@ -22,19 +22,19 @@
 		</data>
 		<key>Base.lproj/Music.storyboardc/K6O-kU-dhm-view-hTt-dq-Id0.nib</key>
 		<data>
-		wRH0zclKrLm29m/umj5pdBiasXA=
+		lsVRD2QSsCe2nkS6jsatveQmgUg=
 		</data>
 		<key>Base.lproj/Music.storyboardc/SelectMusicViewController.nib</key>
 		<data>
-		sewzJo8sCsKuoHJs8rBgL0JpFgI=
+		tG2QsuGWco6RLC/lCs8aZgiYido=
 		</data>
 		<key>Base.lproj/Music.storyboardc/bsd-Qd-agP-view-4PH-DO-T82.nib</key>
 		<data>
-		eyhlD6EFI9rN2qs91sLOkAc9A5M=
+		EPaoAgQbyzxCD2Wh9NYSn/cUXsk=
 		</data>
 		<key>Base.lproj/Music.storyboardc/y2l-Qq-iKF-view-czs-tp-r6L.nib</key>
 		<data>
-		JKzbWwKtaiOdaXsCtvazZdbtzNw=
+		1JIRmiAFeFwoc1UD38COKo3aO+s=
 		</data>
 		<key>Giphy.storyboardc/Info.plist</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Giphy.storyboardc/SearchGiphyViewController.nib</key>
 		<data>
-		pYE+pxNKwUYgh6LcMhTw/T9QyLY=
+		TcPe9TqWGUH+rMzbzZsFoRvq0Aw=
 		</data>
 		<key>Giphy.storyboardc/iNh-xp-EcA-view-DBz-kB-Pwf.nib</key>
 		<data>
-		C0csgrkqOBL1t7gwfuKF4xcensI=
+		dRLS6bqlR7X48rbXS6PRgLPjRik=
 		</data>
 		<key>Headers/FTPManager.h</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/Solo-Swift.h</key>
 		<data>
-		BsKYS5IgJxU22kb70110tenGG8I=
+		OWXQdeh5eLXBgDmA2LCvv5y/3Aw=
 		</data>
 		<key>Headers/Solo.h</key>
 		<data>
@@ -98,11 +98,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		THmCrfJaLSpTSrGH+jXCW1hwHpU=
+		Si2/TR5uOfNdxz6xpZI0QA6nk/4=
 		</data>
 		<key>Main.storyboardc/40S-IR-nel-view-bWT-lk-AEd.nib</key>
 		<data>
-		HqdlQe6E7zghtNIk3t2R5/Tf28I=
+		wBo4ympiSXJsic2UqGj145b92s0=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
@@ -110,43 +110,43 @@
 		</data>
 		<key>Main.storyboardc/SSelectAssetViewController.nib</key>
 		<data>
-		3CPmeZXcEceO9xI42DEHvvT0qp4=
+		VJmr5n+c2yiRWH4ERFUwMOwunrI=
 		</data>
 		<key>Main.storyboardc/pWR-YX-a3N-view-lIc-Iq-Nz1.nib</key>
 		<data>
-		/kSqpy2T0ZsZPmMWufsMPrrCAdo=
+		ZqkZQxz+TdHWfyVARTu9iadsexU=
 		</data>
 		<key>Main.storyboardc/sharePhoto.nib</key>
 		<data>
-		lQeRDEnYsooNLVLPyp24A3Bukog=
+		rQ28bdWPLstWyufxQlCqvX6F2T0=
 		</data>
 		<key>Main.storyboardc/shareVideo.nib</key>
 		<data>
-		3GX6P6B3iI+4Tm++drtDLxF6qjA=
+		EGxslRe6CpZqL2v0XL04p+7dTN8=
 		</data>
 		<key>Main.storyboardc/yYE-fD-iNF-view-t6M-Kl-9zh.nib</key>
 		<data>
-		PPcEzKrwflUSLImTsxAbb58rMEY=
+		7fVMjyAMrFo5JoyXgLMRlyspjNE=
 		</data>
 		<key>Modules/Solo.swiftmodule/arm.swiftdoc</key>
 		<data>
-		KQfwzV5GUGu23i21poJNcwYF0b8=
+		rLcsZ/UQXoZ5K0xZ20Jv4Bint3M=
 		</data>
 		<key>Modules/Solo.swiftmodule/arm.swiftmodule</key>
 		<data>
-		bCMO42HOQtKBn2fE6AzHzHTg+X8=
+		ML8v9QRA/56YAzhCMcj3eQb7s9M=
 		</data>
 		<key>Modules/Solo.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		PdLUmeZO0FXAoylFHhvQ8X9XJW4=
+		JrFuJ+EHISKvJPbAzH3DT2zIjMw=
 		</data>
 		<key>Modules/Solo.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		w0HrAqH74d62vX9rLeKhlO3/Y+I=
+		zrY7tV/wmV7YKsXR6NpiIjNtVIk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		XFWutvC1pXUdVTdcoS7WG9AZP14=
+		LdQY2QR5m3rDyTTy1TJajs2/hW4=
 		</data>
 		<key>Muli-Regular.ttf</key>
 		<data>
@@ -206,43 +206,43 @@
 		</data>
 		<key>SoloEditor.storyboardc/Info.plist</key>
 		<data>
-		/OMBW7Ud8I4RPecsE2vgjaehmOY=
+		x3p6v2a5+4oo9bqv5o/N2Cz8vKU=
 		</data>
 		<key>SoloEditor.storyboardc/SoloEditorViewController.nib</key>
 		<data>
-		B3EGd8Lj4vpj5kUEAaxRO8226Go=
+		wqOueMPaUXHOrR9P64EQA3qiLew=
 		</data>
 		<key>SoloEditor.storyboardc/TcL-Nc-SrK-view-XCV-EU-Tpo.nib</key>
 		<data>
-		h4WDqCEizg/APVtd6Pal6Gl1BJI=
+		b38Wo23yPZrY+loEtJ00UBa5q+k=
 		</data>
 		<key>SoloEditor.storyboardc/UIViewController-g4E-TA-ne2.nib</key>
 		<data>
-		kNLP3szgVzQjAqF0+ZK4sRyfWhc=
+		uA1dsY02NtXKceyNfauzMCzM/PA=
 		</data>
 		<key>SoloEditor.storyboardc/UIViewController-nj1-tv-st0.nib</key>
 		<data>
-		ZcKKpI6e3L7Zvy4tOpl4TOsIflM=
+		JcWNc3ZdxDiCiNU6lU5hBKECYII=
 		</data>
 		<key>SoloEditor.storyboardc/UIViewController-xsa-sm-mFP.nib</key>
 		<data>
-		Bo0L7hGx/EhdRCq4RfH//DCo9LU=
+		tHT4Q6VE3G5IQYhM/mo40NYg43Y=
 		</data>
 		<key>SoloEffectsTool.storyboardc/Info.plist</key>
 		<data>
-		zHELNpgBBugZBejUEECtkBydI9Q=
+		R383FsoUy348zEgPE9T5FZ8ar+g=
 		</data>
 		<key>SoloEffectsTool.storyboardc/SoloEffectsToolViewControllerID.nib</key>
 		<data>
-		WrR0HzCpEHUOdk2wWPBxtwt1L8Y=
+		qG/g2IQlFsyPZWfcKyZBksSVFm4=
 		</data>
 		<key>SoloEffectsTool.storyboardc/UIViewController-jqg-rU-VnT.nib</key>
 		<data>
-		G6T60SeXvxBRaxoO4GulFrfQDVM=
+		dwa1itnKLzEiZ9Zc/4m8wgVQk7o=
 		</data>
 		<key>SoloEffectsTool.storyboardc/v6Y-pU-Nsq-view-6Ie-u6-o9y.nib</key>
 		<data>
-		LylIplS/F09+dLT+zMRZKsZKAdI=
+		kaIJx1J7ZtBTPc4dzzRC2vSwfEc=
 		</data>
 		<key>SoloFiltersTool.storyboardc/Info.plist</key>
 		<data>
@@ -250,15 +250,15 @@
 		</data>
 		<key>SoloFiltersTool.storyboardc/SoloFiltersToolViewControllerID.nib</key>
 		<data>
-		RywOH40m6A9qlH5R6PQMHmfq4/w=
+		JZXanmz3wY+dwECbEDIs830DwwA=
 		</data>
 		<key>SoloFiltersTool.storyboardc/cHp-A5-AW8-view-uBl-vo-Ql8.nib</key>
 		<data>
-		UyH2FZ3AtBV4Ba8TbWwJCI3Yvsk=
+		bC8rBHsxtXrmixyfexyX2leoFT8=
 		</data>
 		<key>default.metallib</key>
 		<data>
-		yddmAufiFqwd1XTnUzHATgdp4HE=
+		HPkmed7IrkVhnlKLSSvuYNDDEoQ=
 		</data>
 		<key>normal.sff</key>
 		<data>
@@ -271,33 +271,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CFQGEJwQhBQK20+SKd+8QdduQOk=
+			1hCP5Eh6PDe6+UBCwnY0Iszqwe8=
 			</data>
 			<key>hash2</key>
 			<data>
-			tQavPY/6EDplEMg9Sh4d6E3EeBveyOGC49aSHFO84iU=
+			JNUQZS3X0VfTm0VVTX7qbQlRitKvU/OhYJk1xA/Yj3w=
 			</data>
 		</dict>
 		<key>Base.lproj/Music.storyboardc/AddMusicToolViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			w2tzjIYPJj/lDONZXNzlxMAsA3Y=
+			bAZ6uD2EfLdaBrajpJI35d6cRac=
 			</data>
 			<key>hash2</key>
 			<data>
-			Tbz6espfqTwoWyy70KFpI1qncV+gs0bI3uvY1gOZIqA=
+			gmvQMWICpd8aqk9zOtW9Cniz6cw3PqA3LNPwuUchkBM=
 			</data>
 		</dict>
 		<key>Base.lproj/Music.storyboardc/DownloadCompositionViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			O4md5fFRELNd+k5wHOKY+oUBzUE=
+			9WAnC+SlcOqDAWQhckzwQ3PHIo0=
 			</data>
 			<key>hash2</key>
 			<data>
-			XPyGjIPje3X7+2AZ868I0ghGlD3vLAMFGVU3Cy1Nr9o=
+			vjFb6M1tu12N2bxV1TBH91QGugvBylI/d3bqxswghws=
 			</data>
 		</dict>
 		<key>Base.lproj/Music.storyboardc/Info.plist</key>
@@ -315,44 +315,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wRH0zclKrLm29m/umj5pdBiasXA=
+			lsVRD2QSsCe2nkS6jsatveQmgUg=
 			</data>
 			<key>hash2</key>
 			<data>
-			dvaFOpP7IvQwG3gb/IASH4cJEDwsVFTYPnzia3TveTU=
+			v5mCJq/ZPlTteK7r8gN6frb4QC55Q5hcH7POB04WhoU=
 			</data>
 		</dict>
 		<key>Base.lproj/Music.storyboardc/SelectMusicViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sewzJo8sCsKuoHJs8rBgL0JpFgI=
+			tG2QsuGWco6RLC/lCs8aZgiYido=
 			</data>
 			<key>hash2</key>
 			<data>
-			pBuA/kSwOzySVsY5gReLgw0dH9+DJHKCGJZxemfUuC0=
+			S+XbEqOm/F6hiUXVN+bcp4kCk8L8eXyDwQjsFpYuIuE=
 			</data>
 		</dict>
 		<key>Base.lproj/Music.storyboardc/bsd-Qd-agP-view-4PH-DO-T82.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eyhlD6EFI9rN2qs91sLOkAc9A5M=
+			EPaoAgQbyzxCD2Wh9NYSn/cUXsk=
 			</data>
 			<key>hash2</key>
 			<data>
-			iGXuLOn/YzWc2hRgwZ7ELFXjJVa0IkxM952ciVnuvlY=
+			ae7DOpEcepVzC2ps5meJGibBpJooCHoM5RvqEWrMTUo=
 			</data>
 		</dict>
 		<key>Base.lproj/Music.storyboardc/y2l-Qq-iKF-view-czs-tp-r6L.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JKzbWwKtaiOdaXsCtvazZdbtzNw=
+			1JIRmiAFeFwoc1UD38COKo3aO+s=
 			</data>
 			<key>hash2</key>
 			<data>
-			uHCzvwgcrFj9GO7vSI3DxcTrQoywPNL0jbGihUBaZ+o=
+			Tn9qfOwdh4zF+nkNfk5SU/ytbL8IZ575CUZjvPLyHrc=
 			</data>
 		</dict>
 		<key>Giphy.storyboardc/Info.plist</key>
@@ -370,22 +370,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pYE+pxNKwUYgh6LcMhTw/T9QyLY=
+			TcPe9TqWGUH+rMzbzZsFoRvq0Aw=
 			</data>
 			<key>hash2</key>
 			<data>
-			Hst/PCkCkx+ZVHh1n8g+fYDW5vlKDmduZkBC7QJuxaM=
+			vi5Op5M0pzte/xUrolWwgVWFdcFOFvKamF9yyN3TR+4=
 			</data>
 		</dict>
 		<key>Giphy.storyboardc/iNh-xp-EcA-view-DBz-kB-Pwf.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			C0csgrkqOBL1t7gwfuKF4xcensI=
+			dRLS6bqlR7X48rbXS6PRgLPjRik=
 			</data>
 			<key>hash2</key>
 			<data>
-			cl6r+PE+R29uGfmEwq9DBjQsfOtDLkWRd40yJHFzaD0=
+			9yF4Qjzysr9DGMv7VY637XZDVY2S8X52IR1WHjhz/Rg=
 			</data>
 		</dict>
 		<key>Headers/FTPManager.h</key>
@@ -480,11 +480,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BsKYS5IgJxU22kb70110tenGG8I=
+			OWXQdeh5eLXBgDmA2LCvv5y/3Aw=
 			</data>
 			<key>hash2</key>
 			<data>
-			NBn8VHXlSRaTTvlIjig3fkAZOAt/ekLv+IHiqIi5x5g=
+			1mNmffJz5oszDUTFoY9YkAJOhnX++y4hTpSaEQJ0P9Y=
 			</data>
 		</dict>
 		<key>Headers/Solo.h</key>
@@ -524,11 +524,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HqdlQe6E7zghtNIk3t2R5/Tf28I=
+			wBo4ympiSXJsic2UqGj145b92s0=
 			</data>
 			<key>hash2</key>
 			<data>
-			bmGAoZ1rphnOPl9MC0fwn/efzsmglOYnJsmXYjrfKSM=
+			VauTBI9QGTFx6Z0MtPpBVrIEBHXPFS98S2Iv5dsvETg=
 			</data>
 		</dict>
 		<key>Main.storyboardc/Info.plist</key>
@@ -546,110 +546,110 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3CPmeZXcEceO9xI42DEHvvT0qp4=
+			VJmr5n+c2yiRWH4ERFUwMOwunrI=
 			</data>
 			<key>hash2</key>
 			<data>
-			eX6bJKQtwSGDCkI5xi+d7ZcbovBuJQnheG37GiKy1NA=
+			XKCUNxaNDEKKjlsDdJh0nJWqeVsCYBhXJYsh6AJ3NKI=
 			</data>
 		</dict>
 		<key>Main.storyboardc/pWR-YX-a3N-view-lIc-Iq-Nz1.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/kSqpy2T0ZsZPmMWufsMPrrCAdo=
+			ZqkZQxz+TdHWfyVARTu9iadsexU=
 			</data>
 			<key>hash2</key>
 			<data>
-			4HKqdAod8JEQYa5G2AMzqMrgw0IfFg16JgjRkNFzcsM=
+			p162ujdhPzmtnAVXbmUKoB4oc+QxnO6mTqTL6Xj94x0=
 			</data>
 		</dict>
 		<key>Main.storyboardc/sharePhoto.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lQeRDEnYsooNLVLPyp24A3Bukog=
+			rQ28bdWPLstWyufxQlCqvX6F2T0=
 			</data>
 			<key>hash2</key>
 			<data>
-			HlW2a/lC5ujeuKSiQnd89RlLTHw7571FmpPYDEfQ+go=
+			k4BwLNRZh5aJOd+HdG77Vo/bm2srO9y1FdnduE3xqVg=
 			</data>
 		</dict>
 		<key>Main.storyboardc/shareVideo.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3GX6P6B3iI+4Tm++drtDLxF6qjA=
+			EGxslRe6CpZqL2v0XL04p+7dTN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ezwe58EpuH/7jzUg2rhtGaOX7bf9JApmlcM4Lb4k/Gg=
+			8K5LzpBPBMTiyZ4fRtYWwTLIsCh7XqxtUJiXh0DeYlM=
 			</data>
 		</dict>
 		<key>Main.storyboardc/yYE-fD-iNF-view-t6M-Kl-9zh.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PPcEzKrwflUSLImTsxAbb58rMEY=
+			7fVMjyAMrFo5JoyXgLMRlyspjNE=
 			</data>
 			<key>hash2</key>
 			<data>
-			VcWGL+TvtQwDLRw4ea47IcR/otNk2tVN3nnCF/mT8Zg=
+			7G3TekHPcS19D6XHwRDGgosRXwTg+xnQNDizqXTVqjk=
 			</data>
 		</dict>
 		<key>Modules/Solo.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KQfwzV5GUGu23i21poJNcwYF0b8=
+			rLcsZ/UQXoZ5K0xZ20Jv4Bint3M=
 			</data>
 			<key>hash2</key>
 			<data>
-			U4L2GP0Lz/q9iwHvcYAOobFyk525k84BPP1j9d8R+nk=
+			kCeerHS6N97n9+RpGbRXSDaQ3Qsfv71UhbzcmWT7wIU=
 			</data>
 		</dict>
 		<key>Modules/Solo.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bCMO42HOQtKBn2fE6AzHzHTg+X8=
+			ML8v9QRA/56YAzhCMcj3eQb7s9M=
 			</data>
 			<key>hash2</key>
 			<data>
-			IxUr/df7CSCqwFa5qbzmibxVz2DanG9t8foXnmKfqRI=
+			FDJKml7q7lQIADPLzckEVcDAoLDYJlqVSN0KYAeNwQk=
 			</data>
 		</dict>
 		<key>Modules/Solo.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PdLUmeZO0FXAoylFHhvQ8X9XJW4=
+			JrFuJ+EHISKvJPbAzH3DT2zIjMw=
 			</data>
 			<key>hash2</key>
 			<data>
-			l+zy4lKltjFWVjnsDcEx4vULFcdgjvYvB8scXRYLHoI=
+			Bs8uGzXBQP8RHcQ1HmBth/k/qH5q/2v/PK1E4iqx/Hs=
 			</data>
 		</dict>
 		<key>Modules/Solo.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			w0HrAqH74d62vX9rLeKhlO3/Y+I=
+			zrY7tV/wmV7YKsXR6NpiIjNtVIk=
 			</data>
 			<key>hash2</key>
 			<data>
-			cu3eVmXcnDITzKLQzzMOx+WhwfuCwXZd2BwlPP0GRFQ=
+			kYajAIm8OBwcVUtjhToaU4DV5A0TWQCgHwXprLyLUKs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XFWutvC1pXUdVTdcoS7WG9AZP14=
+			LdQY2QR5m3rDyTTy1TJajs2/hW4=
 			</data>
 			<key>hash2</key>
 			<data>
-			k0350VHdrX+LK6AUtTfRlNAIbm+12s+OzAAXeExFh1k=
+			RWJ25t8hAZZY454MMn9iI7dr55tUON4P/C9oumRkTvo=
 			</data>
 		</dict>
 		<key>Muli-Regular.ttf</key>
@@ -810,110 +810,110 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/OMBW7Ud8I4RPecsE2vgjaehmOY=
+			x3p6v2a5+4oo9bqv5o/N2Cz8vKU=
 			</data>
 			<key>hash2</key>
 			<data>
-			bAhx6zy8FIUXOI/l8+zW9iDF4Djt+s4Z2CRgfGwKbw4=
+			tSfk3Z6014NA9BU4NBOOtXo4tTflOZgOZcMuFoU9RAA=
 			</data>
 		</dict>
 		<key>SoloEditor.storyboardc/SoloEditorViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			B3EGd8Lj4vpj5kUEAaxRO8226Go=
+			wqOueMPaUXHOrR9P64EQA3qiLew=
 			</data>
 			<key>hash2</key>
 			<data>
-			a5CX4XtD1bAmtgLFOe0xGgxTQWmmcp/WqAVjnqJB7Fo=
+			t3xflm6hs/fRssNZ+TvIhMZStotGf2dOUSMBYpyYvLc=
 			</data>
 		</dict>
 		<key>SoloEditor.storyboardc/TcL-Nc-SrK-view-XCV-EU-Tpo.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			h4WDqCEizg/APVtd6Pal6Gl1BJI=
+			b38Wo23yPZrY+loEtJ00UBa5q+k=
 			</data>
 			<key>hash2</key>
 			<data>
-			zsL+OgFHpyN4e6SaD5yssdZFGpgCaL0ntiy8zcfWyLI=
+			h5sm6PEgVX95pQvnZUN8QKoYVCGnn22QDNFY9E9iJnA=
 			</data>
 		</dict>
 		<key>SoloEditor.storyboardc/UIViewController-g4E-TA-ne2.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kNLP3szgVzQjAqF0+ZK4sRyfWhc=
+			uA1dsY02NtXKceyNfauzMCzM/PA=
 			</data>
 			<key>hash2</key>
 			<data>
-			rHM859FYWjcDNfa3RhRiIAz/xEp0VUdz3epLy+Me8IM=
+			gTbUSjHABvNgCcjTkFnf/pw8nEwN28s5QGfPzx4MJO0=
 			</data>
 		</dict>
 		<key>SoloEditor.storyboardc/UIViewController-nj1-tv-st0.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZcKKpI6e3L7Zvy4tOpl4TOsIflM=
+			JcWNc3ZdxDiCiNU6lU5hBKECYII=
 			</data>
 			<key>hash2</key>
 			<data>
-			6l50snT4bWAI9tyCz7foucXeoiPMANqx9+GM2jVSDZw=
+			Nvoijnw+rlBkieTTvYp1nKW7XGVdxCbXkNqnJMKTuTA=
 			</data>
 		</dict>
 		<key>SoloEditor.storyboardc/UIViewController-xsa-sm-mFP.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Bo0L7hGx/EhdRCq4RfH//DCo9LU=
+			tHT4Q6VE3G5IQYhM/mo40NYg43Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			aKwkbqIDsoNJp5HieQUh00oWd2Rgu9OtEZe0om5f0xE=
+			eB1aLWWeuBUMW8rMLsUQWXu44VMoIzML/sOFc5yBeQM=
 			</data>
 		</dict>
 		<key>SoloEffectsTool.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zHELNpgBBugZBejUEECtkBydI9Q=
+			R383FsoUy348zEgPE9T5FZ8ar+g=
 			</data>
 			<key>hash2</key>
 			<data>
-			RSOPdyEFPD5LPCH4aYkwtGaiiREZDQ1pYPjuvfzZ6ro=
+			89qGvaCmxENhJKpgcEqPI+OeA15gjaGKlgqNF+SKw7M=
 			</data>
 		</dict>
 		<key>SoloEffectsTool.storyboardc/SoloEffectsToolViewControllerID.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WrR0HzCpEHUOdk2wWPBxtwt1L8Y=
+			qG/g2IQlFsyPZWfcKyZBksSVFm4=
 			</data>
 			<key>hash2</key>
 			<data>
-			iDVEQOXIFNQWG6p5ZYiXzmUaIg4zVMNrA3pjc4AzL1k=
+			RAoE6mcZEn7cmvPYC95XczNstqBVd+h2uh3sDze07Bc=
 			</data>
 		</dict>
 		<key>SoloEffectsTool.storyboardc/UIViewController-jqg-rU-VnT.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			G6T60SeXvxBRaxoO4GulFrfQDVM=
+			dwa1itnKLzEiZ9Zc/4m8wgVQk7o=
 			</data>
 			<key>hash2</key>
 			<data>
-			J9mi7jIZjZWLrty9QrkjaNbXCthBHhIfgDPbAXxtCCY=
+			c1Iencx+nysBUaXgfmMthUrLY1UzHTFwymQXtkG6PXg=
 			</data>
 		</dict>
 		<key>SoloEffectsTool.storyboardc/v6Y-pU-Nsq-view-6Ie-u6-o9y.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LylIplS/F09+dLT+zMRZKsZKAdI=
+			kaIJx1J7ZtBTPc4dzzRC2vSwfEc=
 			</data>
 			<key>hash2</key>
 			<data>
-			/0g7LBnpnAVXo4lfAJeWsVMlEMMNaL55+5i2IgqO8Ek=
+			nw1kpE8MN2bbM6utnPJp/nlJQkMPvIsq1YVQkt5OJuo=
 			</data>
 		</dict>
 		<key>SoloFiltersTool.storyboardc/Info.plist</key>
@@ -931,33 +931,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RywOH40m6A9qlH5R6PQMHmfq4/w=
+			JZXanmz3wY+dwECbEDIs830DwwA=
 			</data>
 			<key>hash2</key>
 			<data>
-			haK/8DiqTTc3vw9p3OVj/oD2o4fi1BXeOA4sxNzGOCA=
+			wFsd6KKpXFJ6mDRj5s84KyfcEwrvFy8I3YNaPa5OC9M=
 			</data>
 		</dict>
 		<key>SoloFiltersTool.storyboardc/cHp-A5-AW8-view-uBl-vo-Ql8.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UyH2FZ3AtBV4Ba8TbWwJCI3Yvsk=
+			bC8rBHsxtXrmixyfexyX2leoFT8=
 			</data>
 			<key>hash2</key>
 			<data>
-			GCVtVAxzM8Z70S0b4DLTyFwnZVAw6DHaBvAWI3QyC8E=
+			J1xOIhbmjNzAD+CHfJmW6vs3uZ4BzPDh2x9GCX1ddMU=
 			</data>
 		</dict>
 		<key>default.metallib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yddmAufiFqwd1XTnUzHATgdp4HE=
+			HPkmed7IrkVhnlKLSSvuYNDDEoQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			yurNSlB0twhjTTaxfTUzvnE/u1z4jmpTnjv0px4vPQQ=
+			oBszN5m1QRc7E1TIyLBJJusCEA6U1muW9ftZbRPZO5Q=
 			</data>
 		</dict>
 		<key>normal.sff</key>

@@ -7,4 +7,5 @@ framework module Solo {
 
 module Solo.Swift {
     header "Solo-Swift.h"
+    requires objc
 }
