@@ -276,9 +276,6 @@ typedef void(^ImageBlock)(UIImage *image);
  */
 + (void)generateImageMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
 
-/*! */
-+ (void)runHeadCutterV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("Will be removed in next versions. Use runHeadCutterMaskV2 instead");
-
 /*!
     @brief Call to generate head mask image
     
@@ -288,16 +285,6 @@ typedef void(^ImageBlock)(UIImage *image);
     @param completion Code block that will be called when task is complete
  */
 + (void)runHeadCutterMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
-
-/*!
-    @brief Call to generate cropped head image
- 
-    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
- 
-    @param image Source image to extract head from
-    @param completion Code block that will be called when task is complete
- */
-+ (void)runHeadCutterImageV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Call to generate face mask image
@@ -310,16 +297,6 @@ typedef void(^ImageBlock)(UIImage *image);
 + (void)runFaceCutterMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
-    @brief Call to generate cropped face image
- 
-    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
- 
-    @param image Source image to extract face from
-    @param completion Code block that will be called when task is complete
- */
-+ (void)runFaceCutterImageV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
     @brief Call to generate hair mask image
  
     @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
@@ -330,99 +307,12 @@ typedef void(^ImageBlock)(UIImage *image);
 + (void)runHairCutterMaskV2:(UIImage*)image completion:(ImageMaskBlock)completion;
 
 /*!
-    @brief Call to generate hair image
- 
-    @discussion When calling this method image is not uploaded to server, but being processed using Neural Network on device
- 
-    @param image Source image to extract hair from
-    @param completion Code block that will be called when task is complete
- */
-+ (void)runHairCutterImageV2:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
     @brief Call to get on device generated mask for the selfie photo
  
     @discussion This method does not send any request to server and generates photo mask on device
  */
 
 + (void)selfieMask:(UIImage*)image completion:(ImageMaskBlock)completion;
-
-/*!
- @brief gets cropped and aligned image to passed through the neural net
- 
- @discussion this method returns aligned and cropped image to passed through neural net for hair and face segmentation
- By default SDK uses device screen size as a target size, this means that it resizes input image to it or to the most close size proportionally before processing. Use setTargetSize: if you need target of a specific size.
- */
-
-+ (UIImage*)getLastImageMask DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to generate photo mask of the head only
- 
-    @discussion When calling this method it will start communication with server to upload image and receive generated image of the head in a response
- 
-    @param image Image to upload to server
-    @param completion Code block that will be called when image mask is received from server
- */
-+ (void)generateImageHeadImage:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to generate photo mask of the head only
- 
-    @discussion When calling this method it will start communication with server to upload image and receive generated image mask of the head in a response
- 
-    @param image Image to upload to server
-    @param completion Code block that will be called when image mask is received from server
- */
-+ (void)generateImageHeadMask:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to generate photo mask of the head only
- 
-    @discussion When calling this method it will start communication with server to upload image and receive generated cropped image of the head in a response
- 
-    @param image Image to upload to server
-    @param completion Code block that will be called when image mask is received from server
- */
-+ (void)generateImageHeadImageCropped:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to generate photo mask of the head only
- 
-    @discussion When calling this method it will start communication with server to upload image and receive generated cropped image mask of the head in a response
- 
-    @param image Image to upload to server
-    @param completion Code block that will be called when image mask is received from server
- */
-+ (void)generateImageHeadMaskCropped:(UIImage*)image completion:(ImageMaskBlock)completion DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to get last generated image mask of the head only
- 
-    @discussion This method returns image that was generated with generateImageHeadImage:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
- */
-+ (UIImage*)getLastImageHeadImage DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to get last generated image mask of the head only
- 
-    @discussion This method returns mask that was generated with generateImageHeadMask:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
- */
-+ (UIImage*)getLastImageHeadMask DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to get last generated image mask of the head only
- 
-    @discussion This method returns image that was generated with generateImageHeadImageCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
- */
-+ (UIImage*)getLastImageHeadImageCropped DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
-
-/*!
-    @brief Call to get last generated image mask of the head only
- 
-    @discussion This method returns mask that was generated with generateImageHeadMaskCropped:completion: method last time. It does not trigger uploading and regenrating processes, just returning data from cache.
- */
-+ (UIImage*)getLastImageHeadMaskCropped DEPRECATED_MSG_ATTRIBUTE("This method does nothing in current version");
 
 /*!
     @brief Set render target size
