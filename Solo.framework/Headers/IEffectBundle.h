@@ -3,10 +3,16 @@
 //  SoloFramework
 //
 //  Created by Pavel Yurchenko on 2/22/17.
-//  Copyright © 2017 Tipit Ltd. All rights reserved.
+//  Copyright © 2017 Camerai. All rights reserved.
+//
+//  Please contact us at bugs@camerai.co if you have problems
 //
 
-#import <Foundation/Foundation.h>
+#if ORYOL_MACOS
+#import <AppKit/AppKit.h>
+#else
+#import <UIKit/UIKit.h>
+#endif
 
 typedef void (^SuccessBlock)(BOOL success);
 typedef void (^PogressBlock)(CGFloat percentage);
@@ -24,18 +30,8 @@ typedef void (^PogressBlock)(CGFloat percentage);
 @property (nonatomic, readonly) BOOL isReady;
 
 /*!
- @brief YES if want to use effect file name for effect.name
+    @brief Add path to list to ignore caches for
  */
-@property (nonatomic, assign) BOOL useEffectsFileName;
-
-/*!
-    @brief Call to make bundle ready for use locally
-    @discussion If bundle is remote downloading and mapping starts. If it's compressed then just mapping is done
- 
-    @param progress Block that is called when portion of effect data is downloaded or decompressed
-    @param completion Block that is called when bundle is ready to use
- */
-- (void)makeReady:(PogressBlock)progress completion:(SuccessBlock)completion;
-
+- (void)resetCachesForURL:(NSURL*)url;
 
 @end

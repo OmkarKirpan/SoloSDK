@@ -3,20 +3,22 @@
 //  SoloFramework
 //
 //  Created by Pavel Yurchenko on 10/6/16.
-//  Copyright © 2016 Tipit Ltd. All rights reserved.
+//  Copyright © 2016 Camerai. All rights reserved.
+//
+//  Please contact us at bugs@camerai.co if you have problems
 //
 
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 typedef UIImage ImageType;
 #else
+#import <AppKit/AppKit.h>
 typedef NSImage ImageType;
 #endif
 
 
 @protocol IFilterParameter;
 @protocol IEffectBundle;
-@protocol IFilter;
 
 
 /*!
@@ -36,34 +38,15 @@ typedef NSImage ImageType;
 @property (nonatomic, readonly) NSString *version;
 
 /*!
- @brief Predefined minimum value of effect's background
+ @brief Filter layers structure by folders
+ 
+ @discussion Call to get structured information about all filter layers used in effect. The result is returned as
+                NSDictionary<NSString *, NSArray<NSDictionary *> *>
+                where key is the folder name and value is array of dictionaries describing filter layers
  */
-@property (nonatomic, readonly)  CGFloat backgroundParamMinValue;
+@property (nonatomic, readonly) NSDictionary* filterLayersByFolders;
 
-/*!
- @brief Predefined maximum value of effect's background
- */
-@property (nonatomic, readonly)  CGFloat backgroundParamMaxValue;
 
-/*!
- @brief  Value of effect's background. Possible values - in range from backgroundParamMinValue to backgroundParamMaxValue
- */
-@property (nonatomic, assign)    CGFloat backgroundParamValue;
-
-/*!
- @brief Predefined minimum value of effect's foreground
- */
-@property (nonatomic, readonly)  CGFloat objectParamMinValue;
-
-/*!
- @brief Predefined maximum value of effect's foreground
- */
-@property (nonatomic, readonly)  CGFloat objectParamMaxValue;
-
-/*!
- @brief  Value of effect's foreground. Possible values - in range from objectParamMinValue to objectParamMaxValue
- */
-@property (nonatomic, assign)    CGFloat objectParamValue;
 
 /*!
     @brief Predefined icon image
@@ -75,23 +58,6 @@ typedef NSImage ImageType;
  */
 - (ImageType*)getIconImage;
 
-/*!
-    @brief Apply custom filter to foreground
- 
-    @discussion Call this method to apply custom filter to the foreground
- 
-    @param filter Custom filter to apply
- */
-- (void)applyCustomObjectFilter:(id<IFilter>)filter;
-
-/*!
-    @brief Apply custom filter to background
- 
-    @discussion Call this method to apply custom filter to the background
- 
-    @param filter Custom filter to apply
- */
-- (void)applyCustomBackgroundFilter:(id<IFilter>)filter;
 
 
 @end

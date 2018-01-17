@@ -2,7 +2,7 @@
 //  FTPManager.m
 //  RunModel
 //
-//  Created by Tipit on 09/04/2017.
+//  Created by Camerai on 09/04/2017.
 //  Copyright © 2017 Moty Kosharovsky. All rights reserved.
 //
 
