@@ -5,15 +5,17 @@
 This git repo is for users of the Solo SDK framework who wish to obtain the latest
 framework through CocoaPods. The Guide PDF can be used to setup a new project however
 it is strongly recommended to download our SDK together with the sample application
-from [tipit.tv](tipit.tv).
+from [camerai.co](camerai.co).
 
 
 ## Downloadable Resources
-If you require headcutting then you can find the FaceDB resource [here](https://github.com/tipitltd/SoloSDK/blob/master/Resources/FaceDB).
+If you require face tracking then you can find the Data resources [here](https://github.com/tipitltd/SoloSDK/blob/master/Resources/Data).
 
-The current set of Solo effects which can be read by our SDK are [here](https://github.com/tipitltd/SoloSDK/tree/master/Resources/Effects).
+The current model which can be used with our SDK is [here](https://github.com/tipitltd/SoloSDK/tree/master/Resources/Models)
+
+You can now use [Camerai Studio](https://camerai.co/studio) to create your own effects and use them with our SDK
 
 Many changes coming soon. Stay tuned!
 
-Website: [Tipit.tv](https://tipit.tv/)
-Support: [support@tipit.tv](support@tipit.tv)
+Website: [Camerai.co](https://camerai.co/)
+Support: [info@camerai.co](info@camerai.co)
