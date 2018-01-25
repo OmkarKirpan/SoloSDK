@@ -8,7 +8,6 @@
 //  Please contact us at bugs@camerai.co if you have problems
 //
 
-
 /*!
     @brief Determines a set of available mask types
  */
@@ -26,7 +25,7 @@ typedef NS_ENUM(NSUInteger, SoloMaskType)
     @brief It's a protocol to handle frame masks pushed back through it
  */
 
-@protocol SoloSegmentationDelegate
+@protocol SoloSegmentationDelegate <NSObject>
 
 @optional
 
@@ -57,6 +56,21 @@ typedef NS_ENUM(NSUInteger, SoloMaskType)
  */
 - (void)onSoloSegmentationMaskPixelBufferFrame:(CVPixelBufferRef)pixelBuffer maskType:(SoloMaskType)maskType;
 
+
+/*!
+    @brief Called when mask is just generated and about to be sent to effect for processing
+ 
+    @discussion This is a good place to modify mask pixel buffer if you need to before effect processing starts
+ */
+- (void)onSoloSegmentationMaskPreProcessPixelBufferFrame:(CVPixelBufferRef)pixelBuffer maskType:(SoloMaskType)maskType;
+
+
+/*!
+    @brief Called when masks are just generated and about to be sent to effect for processing
+ 
+    @discussion This is a good place to modify masks pixel buffers if you need to before effect processing starts
+ */
+- (void)onSoloSegmentationMaskPreProcessBody:(CVPixelBufferRef)bodyPixelBuffer head:(CVPixelBufferRef)headPixelBuffer face:(CVPixelBufferRef)facePixelBuffer hair:(CVPixelBufferRef)hairPixelBuffer;
 
 @end
 

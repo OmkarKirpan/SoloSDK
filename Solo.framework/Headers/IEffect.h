@@ -38,6 +38,11 @@ typedef NSImage ImageType;
 @property (nonatomic, readonly) NSString *version;
 
 /*!
+    @brief Keeps selfie camera flag for the case effect is dependant on it
+ */
+@property (nonatomic, assign) BOOL isSelfie;
+
+/*!
  @brief Filter layers structure by folders
  
  @discussion Call to get structured information about all filter layers used in effect. The result is returned as

@@ -91,6 +91,13 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
  */
 + (void)setCurrentEffect:(id<IEffect>)effect error:(NSError**)error;
 
+/*!
+    @brief Current effect
+ 
+    @discussion Call to get access to currently active effect
+ */
++ (id<IEffect>)getCurrentEffect:(NSError**)error;
+
 
 /*!
     @brief Create bundle
@@ -180,6 +187,14 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
     @discussion Call to disable face tracking functionanlity in the SDK
  */
 + (void)disableFace:(BOOL)disable error:(NSError**)error;
+
+
+/*!
+    @brief Resize image to 4 factor
+ 
+    @discussion Call to resize image to the size appropriate for effective processing by the SDK
+ */
++ (UIImage*)resizeImageTo4Factor:(UIImage*)image;
 
 
 @end
