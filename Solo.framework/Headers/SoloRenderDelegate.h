@@ -13,7 +13,7 @@
     @brief It's a protocol to handle render frames pushed back through it
  */
 
-@protocol SoloRenderDelegate
+@protocol SoloRenderDelegate <NSObject>
 
 @optional
 /*!

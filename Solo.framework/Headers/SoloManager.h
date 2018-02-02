@@ -15,6 +15,7 @@
 @protocol IEffectBundle;
 @protocol SoloRenderDelegate;
 @protocol SoloSegmentationDelegate;
+@protocol SoloDepthDelegate;
 typedef void(^ImageBlock)(UIImage *image, NSError *error);
 typedef void(^ValidBlock)(BOOL valid, NSError *error);
 
@@ -74,6 +75,12 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
     @brief Setup delegate to receive call back with frame masks after segmentation
  */
 + (void)setupSegmentationDelegate:(id<SoloSegmentationDelegate>)segmentationDelegate frameFormat:(FrameFormat)frameFormat error:(NSError**)error;
+
+
+/*!
+    @brief Setup delegate to recieve call back with depth map
+ */
++ (void)setupDepthDelegate:(id<SoloDepthDelegate>)depthDelegate frameFormat:(FrameFormat)frameFormat error:(NSError**)error;
 
 
 /*!
@@ -174,6 +181,22 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
 
 
 /*!
+    @brief Set model by URL to use for depth processing
+ 
+    @discussion Call to activate new model to use for depth processing
+ */
++ (void)setDepthModel:(NSURL*)url error:(NSError**)error;
+
+
+/*!
+    @brief Disable depth model
+ 
+    @discussion Call to disable depth processing in the SDK
+ */
++ (void)disableDepthModel:(BOOL)disable error:(NSError**)error;
+
+
+/*!
     @brief Set face database by URL to use for segmentation
  
     @discussion Call to activate new face database to use for segmentation. The URL must be URL to folder containing db data files
@@ -196,5 +219,20 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
  */
 + (UIImage*)resizeImageTo4Factor:(UIImage*)image;
 
+
+/*!
+    @brief Set history parameter value
+ 
+    @discussion Call to override default history parameter value used in segmentation logic. Default value is 0.15
+ */
++ (void)setHistoryParam:(CGFloat)value error:(NSError**)error;
+
+
+/*!
+    @brief Set mask hardening parameter value
+ 
+    @discussion Call to override default mask hardening parameter value used in segmentation logic. Default value is 2.0
+ */
++ (void)setMaskHardeningParam:(CGFloat)value error:(NSError**)error;
 
 @end

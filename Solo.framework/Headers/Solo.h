@@ -15,5 +15,6 @@
 
 #import "SoloRenderDelegate.h"
 #import "SoloSegmentationDelegate.h"
+#import "SoloDepthDelegate.h"
 #import "IEffect.h"
 #import "IEffectBundle.h"

@@ -218,11 +218,14 @@ SWIFT_PROTOCOL("_TtP4Solo8NNBundle_")
 
 SWIFT_CLASS("_TtC4Solo8NNWraper")
 @interface NNWraper : NSObject
+@property (nonatomic) float historyParam;
+@property (nonatomic) float maskHardeningParam;
 - (id <MTLDevice> _Nullable)getMTLDevice SWIFT_WARN_UNUSED_RESULT;
 - (void)initNetworkWithBundle:(id <NNBundle> _Nonnull)bundle SWIFT_METHOD_FAMILY(none);
 - (NSArray<NSNumber *> * _Nullable)runNetworkWithData:(NSArray<NSNumber *> * _Nonnull)data width:(NSInteger)width height:(NSInteger)height SWIFT_WARN_UNUSED_RESULT;
 - (id <MTLTexture> _Nullable)runArtNetworkWithTexture:(id <MTLTexture> _Nullable)texture SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<id <MTLTexture>> * _Nonnull)runTextureFaceHairHeadFullBodySoftMasksSegmentationWithTexture:(id <MTLTexture> _Nullable)texture input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
+- (id <MTLTexture> _Nullable)runDepthProcessingWithTexture:(id <MTLTexture> _Nullable)texture input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
