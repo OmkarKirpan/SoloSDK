@@ -8,17 +8,6 @@
 //  Please contact us at bugs@camerai.co if you have problems
 //
 
-/*!
-    @brief Determines a set of available mask types
- */
-typedef NS_ENUM(NSUInteger, SoloMaskType)
-{
-    SMT_FullBody = 0,
-    SMT_Head,
-    SMT_Face,
-    SMT_Hair,
-};
-
 
 /*!
     @protocol SoloSegmentationDelegate

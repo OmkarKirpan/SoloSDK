@@ -27,6 +27,17 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
     FF_MetalTexture, // Available for segmentation only
 };
 
+/*!
+    @brief Determines a set of available mask types
+ */
+typedef NS_ENUM(NSUInteger, SoloMaskType)
+{
+    SMT_FullBody = 0,
+    SMT_Head,
+    SMT_Face,
+    SMT_Hair,
+};
+
 
 /*!
     @class SoloManager
@@ -234,5 +245,14 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
     @discussion Call to override default mask hardening parameter value used in segmentation logic. Default value is 2.0
  */
 + (void)setMaskHardeningParam:(CGFloat)value error:(NSError**)error;
+
+
+/*!
+    @brief Enable portrait preprocessing for mask
+ 
+    @discussion Call to enable portrait preprocessing mechanism for specified mask type
+ */
++ (void)enablePortraitPreprocessing:(BOOL)enable forMask:(SoloMaskType)maskType error:(NSError**)error;
+
 
 @end
