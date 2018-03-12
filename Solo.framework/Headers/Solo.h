@@ -12,9 +12,11 @@
 
 #import "SoloManager.h"
 #import "FTPManager.h" // TODO : remove it as soon as we can
+#import "SkeletonExtractor.h" // TODO : remove it as soon as we can
 
 #import "SoloRenderDelegate.h"
 #import "SoloSegmentationDelegate.h"
 #import "SoloDepthDelegate.h"
+#import "SoloSkeletonDelegate.h"
 #import "IEffect.h"
 #import "IEffectBundle.h"

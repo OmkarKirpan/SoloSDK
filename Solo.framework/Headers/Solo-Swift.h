@@ -174,6 +174,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import ObjectiveC;
 @import Foundation;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -198,14 +199,6 @@ SWIFT_CLASS("_TtC4Solo6Argmax")
 @end
 
 
-typedef SWIFT_ENUM(NSInteger, MaskMode) {
-  MaskModeHead = 0,
-  MaskModeFace = 1,
-  MaskModeHair = 2,
-  MaskModeBody = 3,
-  MaskModeFullBody = 4,
-};
-
 
 SWIFT_PROTOCOL("_TtP4Solo8NNBundle_")
 @protocol NNBundle
@@ -215,9 +208,10 @@ SWIFT_PROTOCOL("_TtP4Solo8NNBundle_")
 
 @protocol MTLDevice;
 @protocol MTLTexture;
+@class NSNumber;
 
-SWIFT_CLASS("_TtC4Solo8NNWraper")
-@interface NNWraper : NSObject
+SWIFT_CLASS("_TtC4Solo9NNWrapper")
+@interface NNWrapper : NSObject
 @property (nonatomic) float historyParam;
 @property (nonatomic) float maskHardeningParam;
 - (id <MTLDevice> _Nullable)getMTLDevice SWIFT_WARN_UNUSED_RESULT;
@@ -225,9 +219,19 @@ SWIFT_CLASS("_TtC4Solo8NNWraper")
 - (NSArray<NSNumber *> * _Nullable)runNetworkWithData:(NSArray<NSNumber *> * _Nonnull)data width:(NSInteger)width height:(NSInteger)height SWIFT_WARN_UNUSED_RESULT;
 - (id <MTLTexture> _Nullable)runArtNetworkWithTexture:(id <MTLTexture> _Nullable)texture SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<id <MTLTexture>> * _Nonnull)runTextureFaceHairHeadFullBodySoftMasksSegmentationWithTexture:(id <MTLTexture> _Nullable)texture input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<id <MTLTexture>> * _Nonnull)runTextureSegmentationWithTexture:(id <MTLTexture> _Nullable)texture masksDesired:(NSArray<NSNumber *> * _Nonnull)masksDesired input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
 - (id <MTLTexture> _Nullable)runDepthProcessingWithTexture:(id <MTLTexture> _Nullable)texture input:(NSString * _Nonnull)input output:(NSString * _Nonnull)output SWIFT_WARN_UNUSED_RESULT;
+- (id <MTLTexture> _Nullable)runYUV420toRGBAConversionWithYBuffer:(NSData * _Nonnull)yBuffer uBuffer:(NSData * _Nonnull)uBuffer vBuffer:(NSData * _Nonnull)vBuffer size:(CGSize)size orientation:(NSInteger)orientation SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<id <MTLTexture>> * _Nonnull)runRGBAtoYUVConversionWithTexture:(id <MTLTexture> _Nonnull)texture orientation:(NSInteger)orientation SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<NSDictionary<NSString *, id> *> * _Nullable)runSkeletonProcessingWithTexture:(id <MTLTexture> _Nonnull)texture SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, ProtoMasks) {
+  ProtoMasksFace = 1,
+  ProtoMasksHair = 2,
+  ProtoMasksBody = 4,
+};
 
 SWIFT_MODULE_NAMESPACE_POP
 #pragma clang diagnostic pop

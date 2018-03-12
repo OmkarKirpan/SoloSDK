@@ -16,6 +16,7 @@
 @protocol SoloRenderDelegate;
 @protocol SoloSegmentationDelegate;
 @protocol SoloDepthDelegate;
+@protocol SoloSkeletonDelegate;
 typedef void(^ImageBlock)(UIImage *image, NSError *error);
 typedef void(^ValidBlock)(BOOL valid, NSError *error);
 
@@ -25,6 +26,7 @@ typedef NS_ENUM(NSUInteger, FrameFormat)
     FF_Image,
     FF_Data,
     FF_MetalTexture, // Available for segmentation only
+    FF_YUV420, // Available for rendering only
 };
 
 /*!
@@ -38,6 +40,34 @@ typedef NS_ENUM(NSUInteger, SoloMaskType)
     SMT_Hair,
 };
 
+/*!
+    @brief Determines frame orientation
+ */
+typedef NS_ENUM(NSUInteger, SoloFrameOrientation)
+{
+    SFO_Portrait = 0,
+    SFO_LandscapeRight,
+    SFO_LandscapeLeft,
+    SFO_PortraitUpsideDown,
+};
+
+/*!
+    @brief Determines YUV420 frame data type
+ */
+struct SoloYUV420Frame
+{
+    void *yBuffer;
+    void *uBuffer;
+    void *vBuffer;
+    
+    NSUInteger yStride;
+    NSUInteger uStride;
+    NSUInteger vStride;
+    
+    CGSize size;
+    
+    SoloFrameOrientation orientation;
+};
 
 /*!
     @class SoloManager
@@ -92,6 +122,12 @@ typedef NS_ENUM(NSUInteger, SoloMaskType)
     @brief Setup delegate to recieve call back with depth map
  */
 + (void)setupDepthDelegate:(id<SoloDepthDelegate>)depthDelegate frameFormat:(FrameFormat)frameFormat error:(NSError**)error;
+
+
+/*!
+    @brief Setup delegate to recieve call back with skeletons detected data
+ */
++ (void)setupSkeletonDelegate:(id<SoloSkeletonDelegate>)skeletonDelegate error:(NSError**)error;
 
 
 /*!
@@ -151,6 +187,15 @@ typedef NS_ENUM(NSUInteger, SoloMaskType)
  */
 + (void)feedImage:(UIImage*)image error:(NSError**)error;
 
+/*!
+    @brief Pass YUV 420 frame to SDK for processing
+ 
+    @discussion Call this method to feed SDK with frame in format YUV 420
+ 
+    @param frame YUV frame data instance. User is responsible for managing memory buffers used in structure instance
+ */
++ (void)feedYUVFrame:(struct SoloYUV420Frame)frame error:(NSError**)error;
+
 
 /*!
     @brief Perform rendering frame
@@ -205,6 +250,22 @@ typedef NS_ENUM(NSUInteger, SoloMaskType)
     @discussion Call to disable depth processing in the SDK
  */
 + (void)disableDepthModel:(BOOL)disable error:(NSError**)error;
+
+
+/*!
+    @brief Set model by URL to use for skeleton processing
+ 
+    @discussion Call to activate new model to use for skeleton processing
+ */
++ (void)setSkeletonModel:(NSURL*)url error:(NSError**)error;
+
+
+/*!
+    @brief Disable skeleton model
+ 
+    @discussion Call to disable skeleton processing in the SDK
+ */
++ (void)disableSkeletonModel:(BOOL)disable error:(NSError**)error;
 
 
 /*!

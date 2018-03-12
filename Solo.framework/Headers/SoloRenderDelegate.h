@@ -44,4 +44,12 @@
 - (void)onSoloRenderDataFrame:(NSData*)data width:(CGFloat)width height:(CGFloat)height;
 
 
+/*!
+    @brief Called when frame buffer is ready for rendering
+ 
+    @discussion Frame buffer is ready when sff is applied on it
+ */
+- (void)onSoloRenderYUV420Frame:(struct SoloYUV420Frame)frame;
+
+
 @end
