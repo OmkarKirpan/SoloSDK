@@ -4,6 +4,7 @@
 # Solo SDK iOS framework
 Camerai's official photo/video processing SDK.
 
+![Clip6](https://s3.amazonaws.com/nn.soloselfie.me/Examples/clip6_small.gif)
 ![Clip1](https://s3.amazonaws.com/nn.soloselfie.me/Examples/Clip1_small.gif)
 ![Clip4](https://s3.amazonaws.com/nn.soloselfie.me/Examples/Clip4_small.gif)
 ![Clip5](https://s3.amazonaws.com/nn.soloselfie.me/Examples/Clip5_small.gif)
@@ -34,6 +35,8 @@ The current segmentation models which can be used with our SDK are [here](https:
 - High quality (normal speed) - [Download](https://s3.amazonaws.com/nn.soloselfie.me/models/net-high)
 - Normal quality (good speed) - [Download](https://s3.amazonaws.com/nn.soloselfie.me/models/net-normal)
 - Low quality (high speed) - [Download](https://s3.amazonaws.com/nn.soloselfie.me/models/net-low)
+
+The current skeleton pose detection model which can be used with our SDK is [here](https://github.com/tipitltd/SoloSDK/tree/master/Resources/Models)
 
 If you would like to experiment with the depth prediction models which are currently in beta stage development then you can use the following model - [Download](https://github.com/tipitltd/SoloSDK/raw/master/Resources/Models/dnet0716).
 
